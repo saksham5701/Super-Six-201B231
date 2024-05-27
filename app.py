@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
 
-# Title and description
 st.title('Data-Driven Web Application')
 st.write("Upload your CSV file to get started.")
 
-# CSV Upload Service
+# CSV file uploading
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
 if uploaded_file is not None:
@@ -14,7 +13,6 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     st.success("File uploaded successfully!")
 
-    # Displaying the data with pagination
     st.write("Displaying the data:")
     rows_per_page = 20
     total_rows = len(data)
